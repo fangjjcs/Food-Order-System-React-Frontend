@@ -29,3 +29,10 @@ Order meal
 
 You can view / edit / delete your order
 <img width="1512" alt="Order Status" src="https://user-images.githubusercontent.com/33279791/171405049-0b9000a1-3c10-4927-84e4-c4976d339023.png">
+
+<br>
+
+You can manage / edit your menu here
+<img width="1506" alt="Admin" src="https://user-images.githubusercontent.com/33279791/171405681-4a53b9ef-8b1f-4496-832d-cdaa888b0406.png">
+<img width="1509" alt="Admin" src="https://user-images.githubusercontent.com/33279791/171405704-418e47fc-0e30-45d2-992f-5358f760bf4d.png">
+
