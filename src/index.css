@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+:root{
+
+  --font-color-body: #555;
+  --surface-light: rgb(255, 255, 255);
+
+  --spacing-lg: 4rem;
+  --spacing-md: 2rem;
+  --spacing-sm: 1rem;
+  --spacing-xs: 0.5rem;
+  --spacing-xxs: 0.25rem;
+
+  --font-header: normal 2rem 'Permanent Marker';
+  --font-header-100: normal 1.5rem 'Open Sans';
+  --font-nav: normal 1rem 'Open Sans';
+  --font-body-200: normal 14px 'Open Sans';
+  --font-body-100: normal 10px 'Open Sans';
+  --font-footer: normal 0.5rem 'Open Sans';
+
+  --color-brand-green: #005566;
+  --color-brand-yellow: #E9D8A6;
+  --color-brand-red: #e76852;
+
+  
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Open Sans';
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--surface-light);
+  width: 100%;
+  height: 100%;
+}
+
+.slide-in-left-enter {
+  transform: translateX(-100%);
+}
+
+.slide-in-left-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 400ms;
+}
+
+.slide-in-left-exit {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+.slide-in-left-exit-active {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 200ms;
+}
+
+.center {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

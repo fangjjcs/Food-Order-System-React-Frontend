@@ -1,0 +1,48 @@
+.movies-page-header{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* border: solid 1px green; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: var(--spacing-sm);
+    gap: var(--spacing-sm);
+}
+
+.movies-page-header .movies-page-box{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: var(--spacing-md);
+    gap: var(--spacing-md);
+}
+
+.movies-page-header .upload-btn {
+    display: none;
+}
+
+.movies-page-header .upload-content, .image {
+    min-width: 400px;
+    max-width: 640px;
+    min-height: 400px;
+}
+
+.movies-page-header .upload-content {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: var(--spacing-md);
+    gap: var(--spacing-md);
+}
+
+.movies-page-header .login-form {
+    width: 100%;
+    height: 100%;
+}
