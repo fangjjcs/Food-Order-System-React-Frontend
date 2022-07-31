@@ -1,6 +1,12 @@
 import { menuActions } from "./menu-slice";
+import { uiActions } from "./ui-slice";
 
-export const getAllMenu = (header, history) => {
+
+export const getAllMenu = (token, history) => {
+  const header = new Headers();
+  header.append("Content-Type", "application/json");
+  header.append("Authorization", "Bearer " + token);
+
   return async (dispatch) => {
     const fetchData = async () => {
       const responseData = await fetch(`${process.env.REACT_APP_API_URL}/get-all-menu`, {
@@ -32,7 +38,12 @@ export const getAllMenu = (header, history) => {
   };
 };
 
-export const getOpenedMenu = (header, history) => {
+export const getOpenedMenu = (token, history) => {
+
+  const header = new Headers();
+  header.append("Content-Type", "application/json");
+  header.append("Authorization", "Bearer " + token);
+
   return async (dispatch) => {
     const fetchData = async () => {
       const responseData = await fetch(
@@ -44,7 +55,6 @@ export const getOpenedMenu = (header, history) => {
         }
       );
       if (responseData.status === 403) {
-        history.logout();
         history.replace("/login");
       } else if (responseData.status === 200) {
         const data = await responseData.json();
@@ -58,6 +68,38 @@ export const getOpenedMenu = (header, history) => {
         dispatch(menuActions.setTodayMenu(data.menu));
         dispatch(menuActions.setLoadingComplete());
       }
+    } catch (err) {
+      //
+    }
+  };
+};
+export const openMenu = (token, history, request) => {
+
+  const header = new Headers();
+  header.append("Content-Type", "application/json");
+  header.append("Authorization", "Bearer " + token);
+
+  return async (dispatch) => {
+    const fetchData = async () => {
+      const responseData = await fetch(
+        `${process.env.REACT_APP_API_URL}/update-open`,
+        {
+          method: "POST",
+          body: JSON.stringify(request),
+          header: header,
+        }
+      );
+      if (responseData.status === 403) {
+        history.replace("/login");
+      } else if (responseData.status === 200) {
+        const data = await responseData.json();
+        return data;
+      }
+    };
+    try {
+      const data = await fetchData();
+      getOpenedMenu(token, history);
+      
     } catch (err) {
       //
     }

@@ -7,17 +7,16 @@
     justify-content: center;
     align-items: center;
 
-    padding: var(--spacing-sm) var(--spacing-lg);
+    padding: var(--spacing-sm) 0;
     gap: var(--spacing-sm);
 }
 
 .home-page-header .home-page-box{
     width: 100%;
-    height: 400px;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    padding: var(--spacing-sm) var(--spacing-lg);
-    gap: var(--spacing-sm);
+    gap: var(--spacing-md);
 }

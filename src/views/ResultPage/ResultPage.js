@@ -38,6 +38,7 @@ const ResultPage = (props) => {
   const gridRef = useRef(null);
   const [gridApi, setGridApi] = useState(null);
   const [gridColumnApi, setGridColumnApi] = useState(null);
+  const tableHeight = window.innerHeight - 200;
 
   const [openDialog, setOpenDialog] = useState(false);
   const [dialogData, setDialogData] = useState({});
@@ -220,20 +221,15 @@ const ResultPage = (props) => {
   };
   return (
     <header className="result-page-header">
-      <ThemeProvider theme={theme}>
-        <Box className="result-page-box">
-          <Paper elevation={3} className="paper">
+          <Paper elevation={3} className="paper" style={{height:tableHeight, width: "100%"}}>
             <div
               className="ag-theme-material"
-              style={{ height: 540, width: 1000 }}
+              style={{height:tableHeight-50, width: "100%"}}
             >
               <Button onClick={() => onBtnExport()}>
-                {" "}
                 <CloudDownloadIcon style={{ color: "#005566" }}/>{" "}
               </Button>
               <AgGridReact
-                pagination={true}
-                paginationPageSize={15}
                 rowData={rowData}
                 rowSelection="multiple"
                 ref={gridRef}
@@ -307,7 +303,6 @@ const ResultPage = (props) => {
               </AgGridReact>
             </div>
           </Paper>
-        </Box>
         {openDialog && dialogData && (
           <EditDialog
             isOpen={openDialog}
@@ -344,7 +339,6 @@ const ResultPage = (props) => {
           isOpen={isSnackBarOpen}
           text={authContext.successText}
         ></SnackBar>
-      </ThemeProvider>
     </header>
   );
 };

@@ -199,7 +199,7 @@ const CreatePage = (props) => {
                   }
                   value={memo}
                   onChange={handleMemoChange}
-                  placeholder={"例如：電話"}
+                  placeholder={"例如:電話"}
                 />
               </FormControl>
               <Button

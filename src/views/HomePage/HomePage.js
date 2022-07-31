@@ -1,73 +1,82 @@
-import { Box } from "@material-ui/core";
+import { Grid, Box } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { makeStyles } from '@material-ui/core/styles';
 
 import "./HomePage.css";
 import FoodPaper from "./components/FoodPaper";
 import MenuItemList from "./components/MenuItemList";
 import OrderItemList from "./components/OrderItemList";
-import { Fragment, useContext, useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import AuthContext from "../../shared/context/auth-context";
 import SnackBar from "./components/SnackBar";
 import { getAllMenu, getOpenedMenu } from "../../store/menu-actions";
+import { setSnackMsg } from '../../store/ui-action';
+
+const useStyles = makeStyles((theme) => ({
+	root: {
+	  	flexGrow: 1,
+	},
+	paper: {
+		padding: theme.spacing(2),
+		textAlign: 'center',
+		color: theme.palette.text.secondary,
+	},
+}));
 
 const HomePage = () => {
-  const [isSnackBarOpen, setSnackBarOpen] = useState(false);
 
-  const dispatch = useDispatch();
-  const history = useHistory();
+	const classes = useStyles();
 
-  const food = useSelector((state) => state.menu.food);
-  const drink = useSelector((state) => state.menu.drink);
-  const todayMenu = useSelector((state) => state.menu.todayMenu);
-  const isLoading = useSelector((state) => state.menu.isLoading);
+	const [isSnackBarOpen, setSnackBarOpen] = useState(false);
 
-  const authContext = useContext(AuthContext);
-  const header = new Headers();
-  header.append("Content-Type", "application/json");
-  header.append("Authorization", "Bearer " + authContext.token);
+	const dispatch = useDispatch();
+	const history = useHistory();
 
-  useEffect(() => {
-    dispatch(getAllMenu(header, history));
-    dispatch(getOpenedMenu(header, history));
-    checkSnackBar();
-  }, []);
+	const food = useSelector((state) => state.menu.food);
+	const drink = useSelector((state) => state.menu.drink);
+	const todayMenu = useSelector((state) => state.menu.todayMenu);
+	const isLogin = useSelector((state) => state.ui.isLogin);
+	const loginSnackMsg = useSelector((state) => state.ui.snackMsg);
+	const token = useSelector((state) => state.ui.token);
 
-  const checkSnackBar = () => {
-    if (authContext.isSuccess) {
-      setSnackBarOpen(true);
-    }
-    setTimeout(() => {
-      setSnackBarOpen(false);
-      authContext.setSuccess("");
-    }, 3000);
-  };
+	useEffect(() => {
+		dispatch(getAllMenu(token, history));
+		dispatch(getOpenedMenu(token, history));
+		checkSnackBar();
+	}, []);
 
-  return (
-    <header className="home-page-header">
-      <Box className="home-page-box">
-        <Fragment>
-            <FoodPaper type={"food"} width={36}>
-              {food.length > 0 && <MenuItemList list={food}></MenuItemList>}
-            </FoodPaper>
-            <FoodPaper type={"drink"} width={36}>
-              {drink.length > 0 && <MenuItemList list={drink}></MenuItemList>}
-            </FoodPaper>
-            <FoodPaper type={"order"} width={72}>
-              {todayMenu.length > 0 && (
-                <OrderItemList list={todayMenu}></OrderItemList>
-              )}
-            </FoodPaper>
-          </Fragment>
-        
-      </Box>
-      <SnackBar
-        isOpen={isSnackBarOpen}
-        text={authContext.successText}
-      ></SnackBar>
-    </header>
-  );
+	const checkSnackBar = () => {
+		if (isLogin && loginSnackMsg) {
+			setSnackBarOpen(true);
+		}
+		setTimeout(() => {
+			setSnackBarOpen(false);
+			dispatch(setSnackMsg(""));
+		}, 3000);
+	};
+
+	return (
+		<header className="home-page-header">
+			<Box className="home-page-box">
+				<FoodPaper type={"food"} width={30} >
+					{food.length > 0 && <MenuItemList list={food}></MenuItemList>}
+				</FoodPaper>
+				<FoodPaper type={"drink"} width={30}>
+					{drink.length > 0 && <MenuItemList list={drink}></MenuItemList>}
+				</FoodPaper>
+				<FoodPaper type={"order"} width={60}>
+					{todayMenu.length > 0 && (
+						<OrderItemList list={todayMenu}></OrderItemList>
+					)}
+				</FoodPaper>
+			</Box>
+			<SnackBar
+				isOpen={isSnackBarOpen}
+				text={loginSnackMsg}
+			></SnackBar>
+		</header>
+	);
 };
 
 export default HomePage;

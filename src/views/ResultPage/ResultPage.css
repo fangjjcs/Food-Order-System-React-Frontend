@@ -1,9 +1,24 @@
-.result-page-header .paper {
-    width: fit-content;
-    height: fit-content;
-    padding: 2rem 2rem 4rem 2rem;
+
+.result-page-header {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-sm) 0;
+    gap: var(--spacing-sm);
 }
 
+.result-page-header .paper {
+    width: 100%;
+    height: 100%;
+}
+
+.result-page-header .ag-table {
+    width: 100%;
+}
 .result-page-header .ag-cell{
     display: flex;
     flex-direction: column;

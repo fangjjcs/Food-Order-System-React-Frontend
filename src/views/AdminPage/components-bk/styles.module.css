@@ -1,39 +1,33 @@
 .content {
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
 }
 
-.paper-shadow {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.26);
-}
-
-
 .orderLink {
     position: relative;
     text-decoration: none;
     color: #333;
+    
 }
 
 .ListContent {
+    /* position: relative;
+    border: solid red;
+    width: 100%;
+    height: 100%; */
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     margin: var(--spacing-sm) 0 0 0;
     padding: 0 var(--spacing-sm) 0 var(--spacing-sm);
+    /* background-color: var(--color-brand-yellow); */
+    /* border: solid var(--color-brand-yellow) 2px; */
+    /* border-radius: 0.25rem; */
+    /* cursor: pointer; */
 }
-
-.chip {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: #fda239;
-    height: 32px;
-    border-radius: 16px;
-    padding: 0 var(--spacing-sm);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.26);
-}
+/* .ListContent:hover {
+    background-color: #eee;
+} */

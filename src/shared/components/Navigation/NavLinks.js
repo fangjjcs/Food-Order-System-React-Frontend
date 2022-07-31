@@ -1,34 +1,50 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 import "./NavLinks.css";
-import AuthContext from "../../context/auth-context";
+import { useHistory } from "react-router-dom";
+import { logout } from "../../../store/ui-action";
 
 const NavLinks = (props) => {
-  const authContext = useContext(AuthContext);
+  	const isLogin = useSelector((state) => state.ui.isLogin);
+	const history = useHistory()
+	const dispatch = useDispatch();
 
-  return (
-    <ul className="nav-links">
-      <li>
-        <NavLink to="/" exact>
-          開始點餐
-        </NavLink>
-      </li>
-      {authContext.isLogin && (
-        <>
-          <li>
-            <NavLink to="/create">新增菜單</NavLink>
-          </li>
-          <li>
-            <NavLink to="/result">點餐狀態</NavLink>
-          </li>
-          <li>
-            <NavLink to="/admin">菜單管理</NavLink>
-          </li>
-        </>
-      )}
-    </ul>
-  );
+	const logoutHandler = () => {
+		dispatch(logout());
+		history.replace("/");
+	};
+
+	return (
+		<ul className="nav-links">
+			<li>
+				<NavLink to="/" exact>
+				Start Order
+				</NavLink>
+			</li>
+			{isLogin && (
+				<>
+				<li>
+					<NavLink to="/create">Add Menu</NavLink>
+				</li>
+				<li>
+					<NavLink to="/result">Order Status</NavLink>
+				</li>
+				<li>
+					<NavLink to="/admin">Menu Admin</NavLink>
+				</li>
+				</>
+			)}
+
+			{isLogin ? (
+				<div className="logout-btn" onClick={logoutHandler}> Logout </div> ) : (
+				<li>
+					<NavLink to="/login">Login</NavLink>
+				</li>
+			)}
+		</ul>
+	);
 };
 
 export default NavLinks;

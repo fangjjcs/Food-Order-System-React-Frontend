@@ -7,5 +7,5 @@ main {
   display: flex;
   flex-direction: column;
   place-items: center;
-  padding: var(--spacing-sm);
+  padding: var(--spacing-lg);
 }

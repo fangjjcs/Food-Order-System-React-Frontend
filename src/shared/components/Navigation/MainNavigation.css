@@ -6,7 +6,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin-right: 0rem;
     cursor: pointer;
   }
   
@@ -18,18 +17,18 @@
   }
   
   .main-navigation__title {
-    color: #666;
+    color: rgb(253, 162, 57);
     font: var(--font-header);
   }
   
   .main-navigation__title a {
     text-decoration: none;
-    color: #666;
+    color: rgb(253, 162, 57);
   }
   
   .main-navigation__header-nav-auth{
     position: fixed;
-    right: 1rem;
+    right: 3rem;
   }
   
   .main-navigation__drawer-nav {
@@ -40,10 +39,3 @@
   }
   
  
-  .logout-btn {
-    cursor: pointer;
-    padding: var(--spacing-sm);
-  }
-  .logout-btn:hover {
-    color: rgb(226, 155, 0);
-  }

@@ -38,13 +38,13 @@ const AdminPage = () => {
   return (
     <header className="admin-page-header">
       <Box className="admin-page-box">
-        <FoodPaper type={"food"} width={36}>
+        <FoodPaper type={"food"} width={30}>
           {food.length > 0 && <MenuItemList list={food}></MenuItemList>}
         </FoodPaper>
-        <FoodPaper type={"drink"} width={36}>
+        <FoodPaper type={"drink"} width={30}>
           {drink.length > 0 && <MenuItemList list={drink}></MenuItemList>}
         </FoodPaper>
-        <FoodPaper type={"order"} width={72}>
+        <FoodPaper type={"order"} width={60}>
           {todayMenu.length > 0 && (
             <OrderItemList list={todayMenu}></OrderItemList>
           )}
