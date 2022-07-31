@@ -3,9 +3,21 @@ main {
   width: 100%;
   height: 100%;
   margin-top: var(--spacing-lg);
-
   display: flex;
   flex-direction: column;
   place-items: center;
   padding: var(--spacing-lg);
+}
+
+.common-header {
+  width: 100%;
+  height: 100%;
+  min-height: 70vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-sm) 0;
+  gap: var(--spacing-sm);
 }
