@@ -25,6 +25,7 @@ export const getAllMenu = (token, history) => {
     try {
       dispatch(menuActions.setIsLoading());
       const data = await fetchData();
+      console.log("[ALL MENU] ", data);
       dispatch(
         menuActions.setFood(data.menu.filter((item) => item.type === "food"))
       );
@@ -64,6 +65,7 @@ export const getOpenedMenu = (token, history) => {
     try {
       dispatch(menuActions.setIsLoading());
       const data = await fetchData();
+      console.log("[OPENED MENU] ", data);
       if (data.menu !== null) {
         dispatch(menuActions.setTodayMenu(data.menu));
         dispatch(menuActions.setLoadingComplete());
@@ -93,6 +95,7 @@ export const openMenu = (token, history, request) => {
         history.replace("/login");
       } else if (responseData.status === 200) {
         const data = await responseData.json();
+        console.log("[OPEN MENU]",request)
         return data;
       }
     };
