@@ -4,13 +4,10 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
 import AdminPage from "./views/AdminPage/AdminPage";
-
-import OrderPage from "./views/OrderPage/OrderPage";
 import HomePage from "./views/HomePage/HomePage";
 import LoginPage from "./views/LoginPage/LoginPage";
 import CreatePage from "./views/CreatePage/CreatePage";
 import OpenMenuPage from "./views/OpenMenuPage/OpenMenuPage";
-import EditPage from "./views/EditPage/EditPage";
 
 const APP_CONFIG = {
   headerName: "下午茶",
@@ -23,15 +20,8 @@ const App = () => {
       <MainNavigation config={APP_CONFIG} />
       <main>
         <Switch>
-          {/* <Route exact path="/" render={(props) => <Home {...props} title={`hello`}/>} /> */}
           <Route exact path="/">
             <HomePage title={`Home`} />
-          </Route>
-          <Route exact path="/edit">
-            <EditPage title={`Edit`} />
-          </Route>
-          <Route exact path="/order/:id">
-            <OrderPage title={`Order`} />
           </Route>
           <Route exact path="/create">
             <CreatePage title={`Create`} />
@@ -39,7 +29,6 @@ const App = () => {
           <Route exact path="/today-menu">
             <OpenMenuPage title={`Create`} />
           </Route>
-          
           <Route exact path="/admin">
             <AdminPage title={`Admin`} />
           </Route>

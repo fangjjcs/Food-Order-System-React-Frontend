@@ -63,8 +63,8 @@
 
 .MuiDialog-root .btn-box {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-end;
-    align-items: flex-end;
-    /* padding: 0 var(--spacing-md); */
+    align-items: center;
+    gap: var(--spacing-xxs);
 }

@@ -178,12 +178,15 @@ const EditDialog = ({isOpen, onEditDialogClose, item}) => {
 				onChange={handleMemoChange}
 				/>
 			</FormControl>
+			<div className="login-form btn-box">
+				<Button onClick={handleClose} variant="contained" size="small" className="btn">取消</Button>
+				<Button onClick={handleSubmit} variant="contained" size="small" className="btn">確定修改</Button>
+			</div>
 			</div>
 			<img className="image" src={fileString}></img>
 		</div>
 		<DialogActions>
-			<Button onClick={handleClose} variant="contained" size="small" className="btn">取消</Button>
-			<Button onClick={handleSubmit} variant="contained" size="small" className="btn">確定修改</Button>
+			
 		</DialogActions>
 		</Dialog>
 	);

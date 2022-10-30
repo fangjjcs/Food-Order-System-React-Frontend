@@ -1,6 +1,6 @@
 
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Dialog, DialogActions, DialogTitle } from '@mui/material';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
 import Rating from '@mui/material/Rating';
 import { useCallback, useEffect, useState } from 'react';
 
@@ -8,6 +8,7 @@ import './MenuCard.css';
 import { getOpenedMenu, setDisableRandomChoose } from '../../../../store/menu-actions';
 import { useHistory } from 'react-router-dom';
 import { useHttpClient } from '../../../../shared/hook/http-hook';
+import TimeSelect from '../selection/TimeSelect';
 
 const MenuCard = ({item, icon}) => {
 
@@ -18,6 +19,7 @@ const MenuCard = ({item, icon}) => {
 
     const token = useSelector((state) => state.ui.token);
     const [isDialogOpen, setIsDialogOpen] = useState(false);
+    const [dueTime, setDueTime] = useState(false);
 
     const header = new Headers()
 	header.append("Content-Type", "application/json")
@@ -42,7 +44,7 @@ const MenuCard = ({item, icon}) => {
         const request = {
             id: parseInt(item.id),
             name: item.name,
-            closeAt: '2022-10-29 23:00:00'
+            closeAt: dueTime
         }
         updateOpen(header, history, request);
         setIsDialogOpen(false);
@@ -76,14 +78,25 @@ const MenuCard = ({item, icon}) => {
         return Math.round(rating*10) / 10;
     }
 
-    const checkTodayMenu = useCallback((opened, updatedAt) => {
+    const getToday = () => {
         const today = Date.now();
         const date = new Date(today);
         const year = date.getFullYear();
         const month = ("0" + (date.getMonth() + 1)).slice(-2)
         const day = ("0" + date.getDate()).slice(-2)
-        return opened && updatedAt == year+"-"+month+"-"+day;
+        return year+"-"+month+"-"+day
+    }
+    const checkTodayMenu = useCallback((opened, updatedAt) => {
+        
+        return opened && updatedAt == getToday();
     },[])
+
+    const setDueTimeHandler = (time) => {
+        const hour = time.getHours();
+        const minutes = time.getMinutes();
+        const seconds = time.getSeconds();
+        setDueTime(getToday()+" "+hour+":"+minutes+":"+seconds)
+    }
 
     return(
         <>
@@ -101,6 +114,9 @@ const MenuCard = ({item, icon}) => {
         </div>
         <Dialog onClose={onCloseDialog} open={isDialogOpen} size="xs" >
             <DialogTitle>選擇{item.name}為今日下午茶？</DialogTitle>
+            <DialogContent>
+                <TimeSelect setDueTimeHandler={setDueTimeHandler}/>
+            </DialogContent>
             <DialogActions>
                 <Button variant="contained" size="small" className="btn" onClick={submitMenuHandler}>是！</Button>
             </DialogActions>

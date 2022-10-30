@@ -80,12 +80,6 @@ const MainContent = () => {
                 </div>
             </div>
         </Box>
-        {/* <Dialog onClose={onCloseDialog} open={isRandomChoose} size="xs" >
-            <DialogTitle>選擇{randomChoiceMenu.name}為今日下午茶？</DialogTitle>
-            <DialogActions>
-                <Button variant="contained" size="small" className="btn" onClick={submitMenuHandler}>是！</Button>
-            </DialogActions>
-        </Dialog> */}
         </>
     )
 }
