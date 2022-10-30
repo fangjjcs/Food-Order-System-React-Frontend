@@ -115,7 +115,7 @@ const MenuCard = ({item, icon}) => {
         <Dialog onClose={onCloseDialog} open={isDialogOpen} size="xs" >
             <DialogTitle>選擇{item.name}為今日下午茶？</DialogTitle>
             <DialogContent>
-                <TimeSelect setDueTimeHandler={setDueTimeHandler}/>
+                <TimeSelect className="time-selector" setDueTimeHandler={setDueTimeHandler}/>
             </DialogContent>
             <DialogActions>
                 <Button variant="contained" size="small" className="btn" onClick={submitMenuHandler}>是！</Button>
