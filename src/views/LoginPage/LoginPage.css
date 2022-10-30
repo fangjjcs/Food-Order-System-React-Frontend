@@ -1,5 +1,5 @@
 .login-header{
-    height: 60vh;
+    min-height: 70vh;
     padding: var(--spacing-lg);
     display: flex;
     flex-direction: column;

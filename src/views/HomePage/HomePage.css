@@ -1,6 +1,11 @@
 .home-header {
+    min-height: 70vh;
     padding-top: var(--spacing-xs);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
 .home-header .image {
     position: absolute;
     width: 250px;

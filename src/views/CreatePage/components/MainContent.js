@@ -112,7 +112,6 @@ const MainContent = () => {
 						id="contained-button-file"
 						multiple
 						type="file"
-						// ref={fileRef}
 						onChange={handleImgChange}
 					/>
 					<FormInput formClass="login-form" label="店家名稱">
@@ -160,7 +159,9 @@ const MainContent = () => {
 							placeholder={"例如:電話"}
 						/>
 					</FormInput>
-					<Button variant="contained" size="small" className="upload-btn" onClick={handleSubmit}>新增菜單</Button>
+					<div className="login-form btn-box">
+						<Button variant="contained" size="small" className="upload-btn" onClick={handleSubmit}>新增</Button>
+					</div>
 				</div>
 				<img className="upload-image" src={img}></img>
 				<img className="image" src={FoodSvg}></img>

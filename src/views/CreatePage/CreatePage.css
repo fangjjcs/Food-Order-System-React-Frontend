@@ -1,3 +1,8 @@
 .create-header{
+    min-height: 70vh;
     padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

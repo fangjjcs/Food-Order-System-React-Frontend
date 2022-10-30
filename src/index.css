@@ -51,6 +51,7 @@ body {
   background: var(--surface-light);
   width: 100%;
   height: 100%;
+  overflow: scroll;
 }
 
 .slide-in-left-enter {

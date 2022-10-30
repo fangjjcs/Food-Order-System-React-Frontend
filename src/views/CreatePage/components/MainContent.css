@@ -52,3 +52,11 @@
     bottom: 0px;
     z-index: -100;
 }
+
+.create-header .btn-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--spacing-xxs);
+}
