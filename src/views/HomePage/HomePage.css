@@ -1,3 +1,10 @@
 .home-header {
     padding-top: var(--spacing-xs);
 }
+.home-header .image {
+    position: absolute;
+    width: 250px;
+    left: 40px;
+    bottom: 0px;
+    z-index: -100;
+}
