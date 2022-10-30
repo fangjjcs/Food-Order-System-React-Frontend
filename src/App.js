@@ -9,11 +9,11 @@ import OrderPage from "./views/OrderPage/OrderPage";
 import HomePage from "./views/HomePage/HomePage";
 import LoginPage from "./views/LoginPage/LoginPage";
 import CreatePage from "./views/CreatePage/CreatePage";
-import ResultPage from "./views/ResultPage/ResultPage";
+import OpenMenuPage from "./views/OpenMenuPage/OpenMenuPage";
 import EditPage from "./views/EditPage/EditPage";
 
 const APP_CONFIG = {
-  headerName: "Afternoon Tea Time",
+  headerName: "下午茶",
 };
 
 const App = () => {
@@ -36,9 +36,10 @@ const App = () => {
           <Route exact path="/create">
             <CreatePage title={`Create`} />
           </Route>
-          <Route exact path="/result">
-            <ResultPage title={`Result`} />
+          <Route exact path="/today-menu">
+            <OpenMenuPage title={`Create`} />
           </Route>
+          
           <Route exact path="/admin">
             <AdminPage title={`Admin`} />
           </Route>

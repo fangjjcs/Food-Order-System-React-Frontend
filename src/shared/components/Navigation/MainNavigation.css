@@ -17,18 +17,23 @@
   }
   
   .main-navigation__title {
-    color: rgb(253, 162, 57);
-    font: var(--font-header);
+    font: var(--font-nav);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
   }
   
   .main-navigation__title a {
     text-decoration: none;
-    color: rgb(253, 162, 57);
+    color: var(--color-green);
   }
   
   .main-navigation__header-nav-auth{
-    position: fixed;
-    right: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
   }
   
   .main-navigation__drawer-nav {

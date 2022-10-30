@@ -1,0 +1,24 @@
+
+.MuiDialog-root .edit-dialog-content{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: var(--spacing-sm);
+    gap: var(--spacing-xs);
+}
+
+.MuiDialog-root .upload-content {
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0 var(--spacing-md);
+    gap: var(--spacing-sm);
+}
+
+.MuiDialog-root .disabled-btn {
+    display: none;
+}

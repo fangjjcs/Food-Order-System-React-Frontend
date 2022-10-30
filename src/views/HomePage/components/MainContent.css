@@ -1,0 +1,45 @@
+
+.home-header .content-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.home-header .control-box {
+    width: 100%;
+    height: fit-content;
+    padding: var(--spacing-xs) 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.home-header .card-box {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+}
+
+.home-header .panel {
+    width: 50%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+.home-header .random-btn {
+    background-color: var(--color-brown);
+}
+.home-header .random-btn:hover {
+    background-color: var(--color-dark-brown);
+}

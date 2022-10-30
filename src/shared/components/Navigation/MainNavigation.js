@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link, NavLink, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-
+import FoodBankIcon from '@mui/icons-material/FoodBank';
 import MainHeader from "./MainHeader";
 import "./MainNavigation.css";
 import NavLinks from "./NavLinks";
@@ -23,9 +23,10 @@ const MainNavigation = (props) => {
     return (
 		<React.Fragment>
 			<MainHeader>
-				<h2 className="main-navigation__title">
+				<div className="main-navigation__title">
+					<FoodBankIcon style={{fill:"#255957"}}/>
 					<Link to="/">{props.config.headerName}</Link>
-				</h2>
+				</div>
 				<nav className="main-navigation__header-nav-auth">
 					<NavLinks />
 				</nav>

@@ -7,18 +7,7 @@ import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 
 import "./LoginPage.css";
 import { getUser } from "../../store/ui-action";
-
-const theme = createTheme({
-  status: {
-    danger: "#e53e3e",
-  },
-  palette: {
-    primary: {
-      main: "#005566",
-      darker: "#005566",
-    },
-  },
-});
+import LoginSvg from '../../shared/style/image/login.png';
 
 const LoginPage = () => {
 
@@ -40,33 +29,34 @@ const LoginPage = () => {
   };
 
   return (
-    <header className="login-page-header">
-      <ThemeProvider theme={theme}>
-        <Box className="login-page-box">
-          <FormControl variant="standard" className="login-form">
-            <InputLabel htmlFor="input-with-icon-adornment">工號</InputLabel>
-            <Input
-              id="input-with-icon-adornment"
-              startAdornment={
-                <InputAdornment position="start">
-                  <AccountCircle />
-                </InputAdornment>
-              }
-              value={username}
-              onChange={handleNameChange}
-            />
-            {isError && (
-              <FormHelperText error id="standard-helper-text">
-                {errorMsg}
-              </FormHelperText>
-            )}
-          </FormControl>
-          <Button variant="contained" color="primary" onClick={handleSubmit}>
-            確認
-          </Button>
-        </Box>
-      </ThemeProvider>
-    </header>
+    <div className="common-page">
+      <header className="login-header">
+          <Box className="content-box">
+            <FormControl variant="standard" className="login-form">
+              <InputLabel htmlFor="input-with-icon-adornment" style={{color:"#666"}}>工號</InputLabel>
+              <Input
+                id="input-with-icon-adornment"
+                startAdornment={
+                  <InputAdornment position="start">
+                    <AccountCircle style={{fill:"#255957"}}/>
+                  </InputAdornment>
+                }
+                value={username}
+                onChange={handleNameChange}
+              />
+              {isError && (
+                <FormHelperText error id="standard-helper-text">
+                  {errorMsg}
+                </FormHelperText>
+              )}
+            </FormControl>
+            <Button variant="contained" className="login-btn" onClick={handleSubmit}>
+              確認
+            </Button>
+            <img className="image" src={LoginSvg}></img>
+          </Box>
+      </header>
+    </div>
   );
 };
 

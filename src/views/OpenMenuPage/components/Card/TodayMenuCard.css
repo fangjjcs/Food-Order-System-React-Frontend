@@ -1,0 +1,137 @@
+.open-menu-header .card {
+    width: 24%;
+    min-width: 240px;
+    max-width: 480px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: var(--elevation-2px);
+    gap: var(--spacing-xxs);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* flex-grow: 1; */
+    overflow: hidden;
+    position: relative;
+    transition-duration: 0.3s;
+}
+
+.open-menu-header .image {
+    width: 100%;
+}
+
+.open-menu-header .linear-canvas {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    transition-duration: 0.5s;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 16.15%, rgba(0, 0, 0, 0.26) 33.33%, rgba(0, 0, 0, 0.54) 61.46%, rgba(0, 0, 0, 0.71) 86.46%);
+}
+
+.open-menu-header .card:hover{
+    box-shadow: var(--elevation-4px);
+}
+.open-menu-header .card:hover .linear-canvas {
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 16.15%, rgba(0, 0, 0, 0.33) 33.33%, rgba(0, 0, 0, 0.65) 59.9%, rgba(0, 0, 0, 0.88) 85.42%);
+}
+.open-menu-header .card:hover .menu-info {
+    opacity: 0;
+}
+.open-menu-header .card:hover .button-box {
+    opacity: 1;
+    
+}
+.open-menu-header .menu-info {
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    bottom: 0;
+    padding: var(--spacing-sm);
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    transition-duration: 0.3s;
+    opacity: 1;
+
+}
+
+.open-menu-header  .order {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.open-menu-header .order-info {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(102, 246, 45);
+    margin-top: var(--spacing-xs);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.open-menu-header .count {
+    color: #fff;
+}
+
+.open-menu-header .close-time {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.open-menu-header .time {
+    color: #fff;
+}
+
+.open-menu-header .button-box {
+    opacity: 0;
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    bottom: 0;
+    padding: var(--spacing-sm);
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    transition-duration: 0.3s;
+}
+
+.open-menu-header .btn {
+    width: 50%;
+    color: #fff;
+    cursor: pointer;
+
+}
+.open-menu-header .btn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.open-menu-header .rating-info {
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    top: 0;
+    padding: var(--spacing-xs);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+}
+
+.open-menu-header .star-btn {
+    cursor: pointer;
+}

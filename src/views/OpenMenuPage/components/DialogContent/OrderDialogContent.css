@@ -1,0 +1,70 @@
+.MuiDialog-root .order-dialog-box{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: var(--spacing-sm);
+    gap: var(--spacing-xs);
+}
+.MuiDialog-root .result-dialog-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 var(--spacing-sm);
+    gap: var(--spacing-xs);
+}
+
+.MuiDialog-root .result-info-box {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 var(--spacing-xs);
+    gap: var(--spacing-xs);
+}
+
+.MuiDialog-root .result-info {
+    font-size: large;
+    font-weight: 500;
+    color: var(--color-brand-green);
+}
+
+.MuiDialog-root .menu-name {
+    font: var(--font-header-100);
+}
+.MuiDialog-root .memo {
+    font: var(--font-body-200);
+    color: #666;
+}
+
+.MuiDialog-root .image {
+    width: 70%;
+}
+
+.MuiDialog-root .order-content {
+    width: 28%;
+    /* border: solid green; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0 var(--spacing-md);
+    gap: var(--spacing-sm);
+}
+
+.MuiDialog-root .login-form {
+    width: 100%;
+    height: 100%;
+}
+
+.MuiDialog-root .btn-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    /* padding: 0 var(--spacing-md); */
+}

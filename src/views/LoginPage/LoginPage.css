@@ -1,27 +1,38 @@
-.login-page-header{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    /* border: solid 1px green; */
+.login-header{
+    height: 60vh;
+    padding: var(--spacing-lg);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: var(--spacing-sm);
-    gap: var(--spacing-sm);
 }
 
-.login-page-header .login-page-box{
+.login-header .content-box{
     width: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-end;
-    padding: var(--spacing-md);
-    margin-top: var(--spacing-md);
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
 }
 
-.login-page-header .login-form {
+.login-header .login-form {
     width: 100%;
+    color: #666;
+}
+
+.login-header  .login-btn {
+    background-color: var(--color-green);
+    color: #fff;
+}
+.login-header .login-btn:hover {
+    background-color: var(--color-brand-green);
+}
+
+.login-header .image {
+    position: absolute;
+    width: 500px;
+    right: 0px;
+    bottom: 0px;
+    z-index: -100;
 }

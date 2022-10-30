@@ -1,0 +1,40 @@
+
+.open-menu-header .content-box{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--spacing-sm);
+    min-height: 60vh;
+
+}
+
+.open-menu-header .control-box {
+    width: 100%;
+    height: 64px;
+    padding: var(--spacing-xs) 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+}
+
+.open-menu-header .card-box {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.open-menu-header .cover-image {
+    position: absolute;
+    width: 350px;
+    left: 0px;
+    bottom: 0px;
+    z-index: -100;
+}

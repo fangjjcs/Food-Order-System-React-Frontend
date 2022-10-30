@@ -16,7 +16,7 @@
   
   .nav-links a {
     border: 1px solid transparent;
-    color: var(--color-brand-green);
+    color: var(--color-green);
     font: var(--font-nav);
     text-decoration: none;
     padding: 0.5rem;
@@ -52,7 +52,7 @@
     color: #fff;
     cursor: pointer;
     padding: 4px 12px;
-    margin: 0 12px;
+    margin-left: 12px;
     background-color: rgba(48, 55, 78, 0.15);
     
   }

@@ -4,7 +4,7 @@
 :root{
 
   --font-color-body: #555;
-  --surface-light: rgb(255, 255, 255);
+  --surface-light: #f9f9f9;
 
   --spacing-lg: 4rem;
   --spacing-md: 2rem;
@@ -12,16 +12,26 @@
   --spacing-xs: 0.5rem;
   --spacing-xxs: 0.25rem;
 
-  --font-header: normal 2rem 'Montserrat Alternates', sans-serif;;
+  --font-header: normal 2rem 'Open Sans', sans-serif;;
   --font-header-100: normal 1.5rem 'Open Sans';
   --font-nav: thin 0.825rem 'Open Sans';
   --font-body-200: normal 14px 'Open Sans';
   --font-body-100: normal 10px 'Open Sans';
   --font-footer: normal 0.5rem 'Open Sans';
 
-  --color-brand-green: #30374e;
+  --color-brand-green: #254643;
   --color-brand-yellow: #fda239;
   --color-brand-red: #9c3523;
+
+  --color-yellow: #f7c548;
+  --color-brown: #A98743;
+  --color-dark-brown: #7a5c20;
+  --color-eggshell: #EEEBD3;
+  --color-green: #255957;
+  --color-blue: #437C90;
+
+  --elevation-2px: 0px 2px 8px rgba(0, 0, 0, 0.25);
+  --elevation-4px: 0px 4px 12px rgba(0, 0, 0, 0.45);
 
 }
 
@@ -38,7 +48,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: #fff;
+  background: var(--surface-light);
   width: 100%;
   height: 100%;
 }

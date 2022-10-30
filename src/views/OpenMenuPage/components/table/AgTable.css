@@ -1,0 +1,32 @@
+.ag-table-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.table-header-box {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: var(--spacing-xxs);
+}
+
+.result-table {
+    width: 100%;
+}
+
+.ag-cell{
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+}
+.edit-box .edit-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}

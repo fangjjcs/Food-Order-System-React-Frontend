@@ -19,21 +19,19 @@ const NavLinks = (props) => {
 	return (
 		<ul className="nav-links">
 			<li>
-				<NavLink to="/" exact>
-				Start Order
-				</NavLink>
+				<NavLink to="/" exact>首頁</NavLink>
 			</li>
 			{isLogin && (
 				<>
-				<li>
-					<NavLink to="/create">Add Menu</NavLink>
-				</li>
-				<li>
-					<NavLink to="/result">Order Status</NavLink>
-				</li>
-				<li>
-					<NavLink to="/admin">Menu Admin</NavLink>
-				</li>
+					<li>
+						<NavLink to="/today-menu">今日下午茶</NavLink>
+					</li>
+					<li>
+						<NavLink to="/create">新增菜單</NavLink>
+					</li>
+					<li>
+						<NavLink to="/admin">管理菜單</NavLink>
+					</li>
 				</>
 			)}
 

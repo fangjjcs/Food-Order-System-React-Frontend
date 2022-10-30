@@ -20,12 +20,14 @@ const uiSlice = createSlice({
             state.token = action.payload.token;
             state.userName = action.payload.userName;
             localStorage.setItem("token", action.payload.token);
+            localStorage.setItem("user", action.payload.userName);
             state.isLogin = true;
         },
         setLogout(state, action) {
             state.token = "";
             state.userName = "";
             localStorage.removeItem("token")
+            localStorage.removeItem("user");
             state.isLogin = false;
         },
         setIsLoading(state, action) {
