@@ -7,8 +7,11 @@
 Home Page Shows All Menu List
 <img width="1259" alt="截圖 2022-10-30 下午11 26 44" src="https://user-images.githubusercontent.com/33279791/198886977-39697f56-b375-4982-8a5b-0a498f94366a.png">
 
-
 <br>
+
+Random Choosing Menu With Random Mechanism
+<img width="697" alt="image" src="https://user-images.githubusercontent.com/33279791/198887507-abe57190-fbac-4393-b52a-0fa02ab06205.png">
+
 
 Create Menu View
 <img width="1261" alt="image" src="https://user-images.githubusercontent.com/33279791/198887003-d6ea148b-d3a0-4e89-b1d9-d55a798a88ec.png">
@@ -18,7 +21,6 @@ Create Menu View
 Today's Opened Menu View
 <img width="1261" alt="image" src="https://user-images.githubusercontent.com/33279791/198887058-e4e15996-24d2-48c8-a3cc-175603d24143.png">
 
-Hover on Menu Card
 <img width="285" alt="image" src="https://user-images.githubusercontent.com/33279791/198887163-3e3897b2-436e-40e2-ba2a-55c3a949e2a8.png">
 
 Order
