@@ -1,0 +1,62 @@
+
+.create-header .content-box{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+}
+
+.create-header .upload-btn {
+    background-color: var(--color-green);
+    color: #fff;
+}
+.create-header .upload-btn:hover {
+    background-color: var(--color-brand-green);
+}
+.create-header .disabled-btn {
+    display: none;
+}
+
+.create-header .upload-content, .upload-image {
+    min-width: 400px;
+    max-width: 640px;
+    min-height: 400px;
+}
+
+.create-header .upload-content {
+    width: 38%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: var(--spacing-md);
+    gap: var(--spacing-md);
+}
+
+.create-header .upload-image {
+    width: 60%;
+}
+
+.create-header .login-form {
+    width: 100%;
+    height: 100%;
+    color: var(--color-green);
+}
+
+.create-header .image {
+    position: absolute;
+    width: 500px;
+    right: 0px;
+    bottom: 0px;
+    z-index: -100;
+}
+
+.create-header .btn-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--spacing-xxs);
+}

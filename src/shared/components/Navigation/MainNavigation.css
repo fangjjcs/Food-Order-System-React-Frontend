@@ -6,7 +6,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin-right: 0rem;
     cursor: pointer;
   }
   
@@ -18,18 +17,23 @@
   }
   
   .main-navigation__title {
-    color: #666;
-    font: var(--font-header);
+    font: var(--font-nav);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
   }
   
   .main-navigation__title a {
     text-decoration: none;
-    color: #666;
+    color: var(--color-green);
   }
   
   .main-navigation__header-nav-auth{
-    position: fixed;
-    right: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
   }
   
   .main-navigation__drawer-nav {
@@ -40,10 +44,3 @@
   }
   
  
-  .logout-btn {
-    cursor: pointer;
-    padding: var(--spacing-sm);
-  }
-  .logout-btn:hover {
-    color: rgb(226, 155, 0);
-  }

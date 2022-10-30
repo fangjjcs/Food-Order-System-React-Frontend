@@ -2,10 +2,54 @@
 main {
   width: 100%;
   height: 100%;
-  margin-top: var(--spacing-lg);
-
   display: flex;
   flex-direction: column;
   place-items: center;
-  padding: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-lg);
+}
+.common-page {
+  padding: 0 var(--spacing-sm);
+  width: 100%;
+  min-width: 960px;
+}
+.common-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-sm) 0;
+  gap: var(--spacing-sm);
+}
+
+.container-fluid {
+  padding: 0%;
+}
+
+.btn {
+  background-color: var(--color-green);
+  color: #fff;
+}
+.btn:hover {
+  background-color: var(--color-brand-green);
+}
+
+.MuiDialog-root .btn {
+  background-color: var(--color-green);
+  color: #fff;
+}
+.MuiDialog-root .del-btn {
+  color: var(--color-brand-red);
+}
+.MuiDialog-root .outlined-btn {
+  color: var(--color-green);
+}
+.MuiDialog-root .btn:hover {
+  background-color: var(--color-brand-green);
+}
+.MuiDialog-root .outlined-btn:hover {
+  color: var(--color-brand-green);
+}
+.MuiDialog-root .del-btn:hover {
+  color: var(--color-brand-red);
 }
