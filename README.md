@@ -18,10 +18,6 @@ Create Menu View
 Today's Opened Menu View
 <img width="1261" alt="image" src="https://user-images.githubusercontent.com/33279791/198887058-e4e15996-24d2-48c8-a3cc-175603d24143.png">
 
-
-Order Page Shows All Opened Menu
-<img width="1512" alt="Order" src="https://user-images.githubusercontent.com/33279791/171404919-d5ad4d9e-32bc-42d1-9d18-6725ccec58dc.png">
-
 Hover on Menu Card
 <img width="285" alt="image" src="https://user-images.githubusercontent.com/33279791/198887163-3e3897b2-436e-40e2-ba2a-55c3a949e2a8.png">
 
