@@ -50,13 +50,32 @@
     height: 16px;
 }
 
-.home-header .rating {
-    font: var(--font-footer);
+.home-header .admin-btn-box {
     color: #666;
     margin-top: var(--spacing-xs);
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     gap: var(--spacing-xs);
+}
+
+.home-header .edit-btn {
+    background-color: var(--color-brown);
+    color: #fff;
+    width: 100%;
+    min-width: fit-content;
+}
+
+.home-header .edit-btn:hover {
+    background-color: var(--color-dark-brown);
+}
+
+.home-header .del-btn {
+    width: 100%;
+    color: var(--color-brand-red);
+    min-width: fit-content;
+}
+.home-header .del-btn:hover {
+    background-color: #eee;
 }

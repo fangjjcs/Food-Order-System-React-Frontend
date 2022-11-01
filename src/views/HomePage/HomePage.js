@@ -5,7 +5,7 @@ import "./HomePage.css";
 import MainContent from './components/MainContent';
 import { useHistory } from "react-router-dom";
 import { getAllMenu } from "../../store/menu-actions";
-import SaleSvg from '../../shared/style/image/sale.png';
+import HomeSvg from '../../shared/style/image/home.png';
 
 const HomePage = () => {
 
@@ -21,7 +21,7 @@ const HomePage = () => {
 		<div className="common-page">
 			<header className="home-header">
 				<MainContent></MainContent>
-				{/* <img className="image" src={SaleSvg}></img> */}
+				<img className="image" src={HomeSvg}></img>
 			</header>
 		</div>
 	);
