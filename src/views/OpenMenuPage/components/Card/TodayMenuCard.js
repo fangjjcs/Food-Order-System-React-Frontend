@@ -152,9 +152,11 @@ const TodayMenuCard = ({item}) => {
                 <Button variant="contained" size="small" className="btn" onClick={submitRatingHandler}>送出！</Button>
             </DialogActions>
         </Dialog>
-        <Dialog onClose={onCloseResultDialog} open={isResultDialogOpen} maxWidth="xl" fullWidth={true}>
-            <DialogTitle>今日{item.name}點餐結果</DialogTitle>
-            {!isLoading && <ResultDialogContent item={item}><AgTable resultData={resultData}/></ResultDialogContent>}
+        <Dialog onClose={onCloseResultDialog} open={isResultDialogOpen} maxWidth="xl" fullWidth={true} scroll="paper">
+            <DialogTitle>今日{item.name}點餐結果，總價 $ {item.orderTotalPrice} ({item.orderCount} 份餐點)</DialogTitle>
+            {/* <DialogContent dividers={true}> */}
+                {!isLoading && <AgTable resultData={resultData}/>}
+            {/* </DialogContent> */}
         </Dialog>
         </>
     )

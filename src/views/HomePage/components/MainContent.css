@@ -43,3 +43,18 @@
 .home-header .random-btn:hover {
     background-color: var(--color-dark-brown);
 }
+
+.MuiDialog-root .MuiPickersToolbar-toolbar, .MuiDialog-root .MuiPickersClockPointer-pointer,
+.MuiDialog-root .MuiPickersClockPointer-noPoint {
+    background-color: var(--color-brown);
+}
+.MuiDialog-root .MuiPickersClock-pin {
+    background-color: var(--color-brand-green);
+}
+.MuiDialog-root .MuiPickersClockPointer-thumb {
+    border: 14px solid var(--color-brand-green);
+}
+
+.MuiDialog-root .MuiButton-textPrimary {
+    color: var(--color-brand-green);
+}
