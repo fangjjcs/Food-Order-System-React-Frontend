@@ -2,7 +2,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
 import Rating from '@mui/material/Rating';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import './MenuCard.css';
 import { getOpenedMenu, setDisableRandomChoose } from '../../../../store/menu-actions';
@@ -98,6 +98,61 @@ const MenuCard = ({item, icon}) => {
         setDueTime(getToday()+" "+hour+":"+minutes+":"+seconds)
     }
 
+
+    //------------------------ POLLING NEW STATE ------------------------//
+
+    const useIntervalAsync = (fn, iskeepAsking, ms) => {
+        console.log("trigger hook")
+        const timeout = useRef();
+        const mountedRef = useRef(false);
+
+        const run = useCallback(async () => {
+            await fn();
+            if (mountedRef.current) {
+                timeout.current = window.setTimeout(run, ms);
+            }
+        }, [fn, ms]);
+
+        useEffect(() => {
+            mountedRef.current = true;
+            if(iskeepAsking){
+                console.log("start timer")
+                run();
+            }
+            return () => {
+                console.log("clear timer")
+                mountedRef.current = false;
+                window.clearTimeout(timeout.current);
+            };
+        }, [run, iskeepAsking]);
+
+    };
+
+    const [pollingStar, setPollingStar] = useState(round(item.rating));
+
+    const request = {
+        id: item.id,
+        name: item.name
+    }
+
+    const updateState = useCallback(async () => {
+        console.log("fetching...")
+        const response = await fetch(process.env.REACT_APP_API_URL+"/get-menu", 
+        {
+            method:'POST',
+            body: JSON.stringify(request),
+            headers: header,
+        });
+        const data = await response.json();
+        console.log("POOLED ",data.menu[0].name, data.menu[0].rating)
+        setPollingStar(data.menu[0].rating);
+    },[]);
+
+    // para : repeat function, repeat condition, repeat interval time
+    const a = useIntervalAsync(updateState, pollingStar>4 && pollingStar<5, 5000);
+   
+    //------------------------ POLLING NEW STATE ------------------------//
+
     return(
         <>
         <div className='card' onClick={()=>onClickCardHandler(checkTodayMenu(item.opened, item.updatedAt))}>
@@ -108,8 +163,8 @@ const MenuCard = ({item, icon}) => {
             </div>
             <div className='card-info memo'>{item.memo}</div>
             <div className='card-info rating'>
-                {round(item.rating)}
-                <Rating name="half-rating-read" defaultValue={item.rating} precision={0.5} size="small" readOnly />
+                {pollingStar}
+                <Rating name="half-rating-read" value={pollingStar} precision={0.5} size="small" readOnly />
             </div>
         </div>
         <Dialog onClose={onCloseDialog} open={isDialogOpen} size="xs" >
