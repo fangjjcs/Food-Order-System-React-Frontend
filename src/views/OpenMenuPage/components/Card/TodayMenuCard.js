@@ -46,9 +46,6 @@ const TodayMenuCard = ({item}) => {
     const onClickRateStar = (event, newValue) => {
         setRatingValue(newValue);
     }
-    const submitOrderHandler = () => {
-
-    }
 
     const submitRatingHandler = () => {
         const request = {
