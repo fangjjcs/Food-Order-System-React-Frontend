@@ -9,6 +9,7 @@ import { getOpenedMenu, setDisableRandomChoose } from '../../../../store/menu-ac
 import { useHistory } from 'react-router-dom';
 import { useHttpClient } from '../../../../shared/hook/http-hook';
 import TimeSelect from '../selection/TimeSelect';
+import {useIntervalAsync} from '../hook/useIntervalAsync';
 
 const MenuCard = ({item, icon}) => {
 
@@ -65,7 +66,7 @@ const MenuCard = ({item, icon}) => {
                 history.replace("/login");
             } else if (responseData.status === 200) {
                 dispatch(getOpenedMenu(token, history))
-                history.push('/today-menu');
+                // history.push('/today-menu');
             }
         } catch (err) {
             // done in http-hook.js
@@ -98,37 +99,11 @@ const MenuCard = ({item, icon}) => {
         setDueTime(getToday()+" "+hour+":"+minutes+":"+seconds)
     }
 
-
     //------------------------ POLLING NEW STATE ------------------------//
 
-    const useIntervalAsync = (fn, iskeepAsking, ms) => {
-        console.log("trigger hook")
-        const timeout = useRef();
-        const mountedRef = useRef(false);
+    
 
-        const run = useCallback(async () => {
-            await fn();
-            if (mountedRef.current) {
-                timeout.current = window.setTimeout(run, ms);
-            }
-        }, [fn, ms]);
-
-        useEffect(() => {
-            mountedRef.current = true;
-            if(iskeepAsking){
-                console.log("start timer")
-                run();
-            }
-            return () => {
-                console.log("clear timer")
-                mountedRef.current = false;
-                window.clearTimeout(timeout.current);
-            };
-        }, [run, iskeepAsking]);
-
-    };
-
-    const [pollingStar, setPollingStar] = useState(round(item.rating));
+    const [pollingStar, setPollingStar] = useState({rating: item.rating, id: ""});
 
     const request = {
         id: item.id,
@@ -144,15 +119,17 @@ const MenuCard = ({item, icon}) => {
             headers: header,
         });
         const data = await response.json();
-        console.log("POOLED ",data.menu[0].name, data.menu[0].rating)
-        setPollingStar(data.menu[0].rating);
+        console.log("pooled ",data.menu[0].name)
+        setPollingStar({rating:data.menu[0].rating, id: data.menu[0].id});
+
     },[]);
 
     // para : repeat function, repeat condition, repeat interval time
-    const a = useIntervalAsync(updateState, pollingStar>4 && pollingStar<5, 5000);
-   
+    useIntervalAsync(updateState, pollingStar.rating===4.5, 3000);
+    
     //------------------------ POLLING NEW STATE ------------------------//
 
+    
     return(
         <>
         <div className='card' onClick={()=>onClickCardHandler(checkTodayMenu(item.opened, item.updatedAt))}>
@@ -163,8 +140,8 @@ const MenuCard = ({item, icon}) => {
             </div>
             <div className='card-info memo'>{item.memo}</div>
             <div className='card-info rating'>
-                {pollingStar}
-                <Rating name="half-rating-read" value={pollingStar} precision={0.5} size="small" readOnly />
+                {pollingStar.rating}
+                <Rating name="half-rating-read" value={pollingStar.rating} precision={0.5} size="small" readOnly />
             </div>
         </div>
         <Dialog onClose={onCloseDialog} open={isDialogOpen} size="xs" >
