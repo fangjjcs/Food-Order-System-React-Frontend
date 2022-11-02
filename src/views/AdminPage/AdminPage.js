@@ -19,7 +19,7 @@ const AdminPage = () => {
 	
 	return (
 		<div className="common-page">
-			<header className="home-header">
+			<header className="admin-header">
 				<MainContent></MainContent>
 			</header>
 		</div>

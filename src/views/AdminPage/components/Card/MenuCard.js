@@ -100,18 +100,11 @@ const MenuCard = ({item, icon}) => {
                 {icon}
             </div>
             <div className='card-info memo'>{item.memo}</div>
-            <div className='card-info rating'>
-                {round(item.rating)}
-                <Rating name="half-rating-read" defaultValue={item.rating} precision={0.5} size="small" readOnly />
+            <div className='card-info admin-btn-box'>
+                {checkTodayMenu(item.opened,item.updatedAt) && <Button variant="text" size="small" className="del-btn" onClick={deleteTodayMenu}>取消今日下午茶</Button>}
+                <Button variant="contained" size="small" className="edit-btn" onClick={editMenuHandler}>編輯菜單</Button>
             </div>
         </div>
-        <Dialog onClose={onCloseDialog} open={isDialogOpen} size="sm" fullWidth={true} >
-            <DialogTitle>{item.name}？</DialogTitle>
-            <DialogActions>
-                {checkTodayMenu(item.opened,item.updatedAt) && <Button variant="text" size="small" className="del-btn" onClick={deleteTodayMenu}>刪除今日下午茶</Button>}
-                <Button variant="contained" size="small" className="btn" onClick={editMenuHandler}>編輯菜單</Button>
-            </DialogActions>
-        </Dialog>
         {isEditDialogOpen&&<EditDialog isOpen={isEditDialogOpen} onEditDialogClose={onEditDialogClose} item={item}></EditDialog>}
         </>
     )
