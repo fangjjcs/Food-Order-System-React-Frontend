@@ -1,5 +1,5 @@
 
-.home-header .card {
+.admin-header .card {
     width: 49%;
     height: fit-content;
     background-color: #fff;
@@ -15,11 +15,11 @@
     transition-duration: 0.3s ;
     position: relative;
 }
-.home-header .card:hover {
+.admin-header .card:hover {
     box-shadow: var(--elevation-4px);
 }
 
-.home-header .opened-menu {
+.admin-header .opened-menu {
     position: absolute;
     top: 0px;
     background-color: var(--color-brown);
@@ -30,33 +30,52 @@
     transform: translateX(-20px) rotate(-30deg);
 }
 
-.home-header .card-title {
+.admin-header .card-title {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.home-header .card-info {
+.admin-header .card-info {
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.home-header .memo {
+.admin-header .memo {
     font: var(--font-footer);
     color: #666;
     height: 16px;
 }
 
-.home-header .rating {
-    font: var(--font-footer);
+.admin-header .admin-btn-box {
     color: #666;
     margin-top: var(--spacing-xs);
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     gap: var(--spacing-xs);
+}
+
+.admin-header .edit-btn {
+    background-color: var(--color-brown);
+    color: #fff;
+    width: 100%;
+    min-width: fit-content;
+}
+
+.admin-header .edit-btn:hover {
+    background-color: var(--color-dark-brown);
+}
+
+.admin-header .del-btn {
+    width: 100%;
+    color: var(--color-brand-red);
+    min-width: fit-content;
+}
+.admin-header .del-btn:hover {
+    background-color: #eee;
 }

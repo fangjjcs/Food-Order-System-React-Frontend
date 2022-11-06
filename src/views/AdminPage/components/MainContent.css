@@ -1,5 +1,5 @@
 
-.home-header .content-box {
+.admin-header .content-box {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -8,7 +8,7 @@
     gap: var(--spacing-sm);
 }
 
-.home-header .control-box {
+.admin-header .control-box {
     width: 100%;
     height: fit-content;
     padding: var(--spacing-xs) 0;
@@ -19,7 +19,7 @@
     gap: var(--spacing-sm);
 }
 
-.home-header .card-box {
+.admin-header .card-box {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -27,7 +27,7 @@
     gap: var(--spacing-lg);
 }
 
-.home-header .panel {
+.admin-header .panel {
     width: 50%;
     height: fit-content;
     display: flex;
@@ -37,9 +37,9 @@
     gap: var(--spacing-xs);
 }
 
-.home-header .random-btn {
+.admin-header .random-btn {
     background-color: var(--color-brown);
 }
-.home-header .random-btn:hover {
+.admin-header .random-btn:hover {
     background-color: var(--color-dark-brown);
 }

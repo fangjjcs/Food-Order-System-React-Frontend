@@ -186,7 +186,6 @@ const EditDialog = ({isOpen, onEditDialogClose, item}) => {
 			<img className="image" src={fileString}></img>
 		</div>
 		<DialogActions>
-			
 		</DialogActions>
 		</Dialog>
 	);

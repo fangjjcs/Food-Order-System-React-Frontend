@@ -1,11 +1,9 @@
 
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Dialog, DialogActions, DialogTitle } from '@mui/material';
-import Rating from '@mui/material/Rating';
-import { useCallback, useEffect, useState } from 'react';
+import { Button} from '@mui/material';
+import { useCallback, useState } from 'react';
 
 import './MenuCard.css';
-import { getOpenedMenu, setDisableRandomChoose } from '../../../../store/menu-actions';
 import { useHistory } from 'react-router-dom';
 import { useHttpClient } from '../../../../shared/hook/http-hook';
 import EditDialog from '../Dialog/EditDialog';
@@ -93,25 +91,18 @@ const MenuCard = ({item, icon}) => {
 
     return(
         <>
-        <div className='card' onClick={()=>onClickCardHandler(checkTodayMenu(item.opened, item.updatedAt))}>
+        <div className='card'>
             <div className='card-info card-title'>
                 {checkTodayMenu(item.opened, item.updatedAt)&&<div className='opened-menu'>今日</div>}
                 <div>{item.name}</div>
                 {icon}
             </div>
             <div className='card-info memo'>{item.memo}</div>
-            <div className='card-info rating'>
-                {round(item.rating)}
-                <Rating name="half-rating-read" defaultValue={item.rating} precision={0.5} size="small" readOnly />
+            <div className='card-info admin-btn-box'>
+                {checkTodayMenu(item.opened,item.updatedAt) && <Button variant="text" size="small" className="del-btn" onClick={deleteTodayMenu}>取消今日下午茶</Button>}
+                <Button variant="contained" size="small" className="edit-btn" onClick={editMenuHandler}>編輯菜單</Button>
             </div>
         </div>
-        <Dialog onClose={onCloseDialog} open={isDialogOpen} size="sm" fullWidth={true} >
-            <DialogTitle>{item.name}？</DialogTitle>
-            <DialogActions>
-                {checkTodayMenu(item.opened,item.updatedAt) && <Button variant="text" size="small" className="del-btn" onClick={deleteTodayMenu}>刪除今日下午茶</Button>}
-                <Button variant="contained" size="small" className="btn" onClick={editMenuHandler}>編輯菜單</Button>
-            </DialogActions>
-        </Dialog>
         {isEditDialogOpen&&<EditDialog isOpen={isEditDialogOpen} onEditDialogClose={onEditDialogClose} item={item}></EditDialog>}
         </>
     )

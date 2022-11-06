@@ -3,13 +3,13 @@
     padding-top: var(--spacing-xs);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .home-header .image {
     position: absolute;
     width: 250px;
-    left: 40px;
+    right: 40px;
     bottom: 0px;
     z-index: -100;
 }

@@ -62,3 +62,5 @@ Manage / Edit Menu At Admin Page
 - "react-scripts": "5.0.0",
 - "react-transition-group": "^4.2.2",
 
+### Illustration
+From [Whoosh!](https://www.ls.graphics/illustrations/whoosh)

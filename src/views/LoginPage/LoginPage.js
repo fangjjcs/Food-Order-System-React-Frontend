@@ -50,7 +50,7 @@ const LoginPage = () => {
                 </FormHelperText>
               )}
             </FormControl>
-            <Button variant="contained" className="login-btn" onClick={handleSubmit}>
+            <Button variant="contained" size="small" className="login-btn" onClick={handleSubmit}>
               確認
             </Button>
             <img className="image" src={LoginSvg}></img>
