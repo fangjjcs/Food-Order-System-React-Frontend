@@ -55,8 +55,21 @@ const OrderDialogContent = ({user, item, onCloseDialog}) => {
         return true;
     };
 
+    const checkInteger = () => {
+        if(isNaN(parseInt(price))){
+          alert("價格必須為整數")
+          return false
+        }
+        if(isNaN(parseInt(count))){
+          alert("數量必須為整數")
+          return false
+        }
+
+        return true
+    }
+
     const handleSubmit = () => {
-        const checkPass = checkEmpty();
+        const checkPass = checkEmpty() && checkInteger();
         const request = {
         menuId: parseInt(item.id),
         name: item.name,
@@ -64,10 +77,10 @@ const OrderDialogContent = ({user, item, onCloseDialog}) => {
         item: itemName,
         sugar: item.type === "drink" ? itemSugar : "",
         ice: item.type === "drink" ? itemIce : "",
-        price: price,
+        price: parseInt(price),
         memo: userMemo,
         user: user,
-        count: count,
+        count: parseInt(count),
         };
         if (checkPass) {
         console.log(request);

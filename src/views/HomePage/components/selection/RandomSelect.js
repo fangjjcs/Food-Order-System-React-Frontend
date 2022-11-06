@@ -54,10 +54,11 @@ const RandomSelect = ({options, onCloseRandomDialog, submitRandomChoice, isRando
 
     const submitChoiceHandler = () => {
         if(!isLogin) {
-            history.replaceState("/login");
+            history.replace("/login");
+        } else {
+            onCloseRandomDialog();
+            submitRandomChoice(selection);
         }
-        onCloseRandomDialog();
-        submitRandomChoice(selection);
     }
 
     return (

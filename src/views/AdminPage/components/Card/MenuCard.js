@@ -1,11 +1,9 @@
 
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Dialog, DialogActions, DialogTitle } from '@mui/material';
-import Rating from '@mui/material/Rating';
-import { useCallback, useEffect, useState } from 'react';
+import { Button} from '@mui/material';
+import { useCallback, useState } from 'react';
 
 import './MenuCard.css';
-import { getOpenedMenu, setDisableRandomChoose } from '../../../../store/menu-actions';
 import { useHistory } from 'react-router-dom';
 import { useHttpClient } from '../../../../shared/hook/http-hook';
 import EditDialog from '../Dialog/EditDialog';
@@ -93,7 +91,7 @@ const MenuCard = ({item, icon}) => {
 
     return(
         <>
-        <div className='card' onClick={()=>onClickCardHandler(checkTodayMenu(item.opened, item.updatedAt))}>
+        <div className='card'>
             <div className='card-info card-title'>
                 {checkTodayMenu(item.opened, item.updatedAt)&&<div className='opened-menu'>今日</div>}
                 <div>{item.name}</div>

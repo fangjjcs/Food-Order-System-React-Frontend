@@ -47,7 +47,6 @@
 
 .MuiDialog-root .order-content {
     width: 28%;
-    /* border: solid green; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

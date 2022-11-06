@@ -5,11 +5,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import StarIcon from '@mui/icons-material/StarBorder';
 
 import './TodayMenuCard.css';
-import { updateMenuRating } from '../../../../store/menu-actions';
 import { useHistory } from 'react-router-dom';
 import { useHttpClient } from '../../../../shared/hook/http-hook';
 import OrderDialogContent from '../DialogContent/OrderDialogContent';
-import ResultDialogContent from '../DialogContent/ResultDialogContent';
 import AgTable from '../table/AgTable';
 
 const TodayMenuCard = ({item}) => {
@@ -150,10 +148,7 @@ const TodayMenuCard = ({item}) => {
             </DialogActions>
         </Dialog>
         <Dialog onClose={onCloseResultDialog} open={isResultDialogOpen} maxWidth="xl" fullWidth={true} scroll="paper">
-            <DialogTitle>今日{item.name}點餐結果，總價 $ {item.orderTotalPrice} ({item.orderCount} 份餐點)</DialogTitle>
-            {/* <DialogContent dividers={true}> */}
-                {!isLoading && <AgTable resultData={resultData}/>}
-            {/* </DialogContent> */}
+            {!isLoading && <AgTable resultData={resultData}/>}
         </Dialog>
         </>
     )

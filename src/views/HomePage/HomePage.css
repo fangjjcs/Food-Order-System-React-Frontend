@@ -9,7 +9,7 @@
 .home-header .image {
     position: absolute;
     width: 250px;
-    left: 40px;
+    right: 40px;
     bottom: 0px;
     z-index: -100;
 }
