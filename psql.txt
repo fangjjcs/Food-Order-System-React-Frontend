@@ -1,0 +1,47 @@
+CREATE TABLE member (
+    id integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    employee_id text,
+    name text
+);
+
+-- Indices -------------------------------------------------------
+
+CREATE UNIQUE INDEX member_pkey ON member(id int4_ops);
+
+CREATE TABLE menu (
+    id integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name text,
+    type text,
+    memo text,
+    image bytea,
+    created_at text,
+    updated_at text,
+    rating real,
+    total_voter integer,
+    opened boolean,
+    close_at text
+);
+
+-- Indices -------------------------------------------------------
+
+CREATE UNIQUE INDEX untitled_table_pkey ON menu(id int4_ops);
+
+
+CREATE TABLE orders (
+    id integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    menu_id integer,
+    name text,
+    type text,
+    item text,
+    sugar text,
+    ice text,
+    user_memo text,
+    updated_at text,
+    user_name text,
+    price integer,
+    count integer
+);
+
+-- Indices -------------------------------------------------------
+
+CREATE UNIQUE INDEX order_pkey ON orders(id int4_ops);

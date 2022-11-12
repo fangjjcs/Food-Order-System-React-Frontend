@@ -1,5 +1,4 @@
-import { FormControl, Input, InputAdornment, InputLabel,  } from "@mui/material"
-
+import { FormControl, InputLabel } from "@mui/material"
 
 const FormInput = ({formClass, label, children}) => {
     return(

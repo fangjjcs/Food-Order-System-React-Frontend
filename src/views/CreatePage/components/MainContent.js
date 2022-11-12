@@ -1,20 +1,18 @@
 
 import { useHistory } from "react-router-dom";
-import { useState, useContext, useRef } from "react";
+import { useState } from "react";
 
-import { Box, Button, FormControl, FormHelperText, Input, InputAdornment, InputLabel, MenuItem, Select } from '@mui/material';
+import { Box, Button, FormHelperText, Input, InputAdornment, MenuItem, Select } from '@mui/material';
 import { Restaurant, Fastfood, Info } from "@mui/icons-material";
 
 import './MainContent.css';
 import { useHttpClient } from "../../../shared/hook/http-hook";
-import AuthContext from "../../../shared/context/auth-context";
 import FoodSvg from '../../../shared/style/image/food.png';
-import FormInput from "./forms/FormInout";
+import FormInput from "../../../shared/components/forms/FormInput";
 import { useSelector } from "react-redux";
 
 const MainContent = () => {
   
-    const fileRef = useRef();
 	const [img, setImg] = useState(null);
 	const [fileString, setFileString] = useState("");
 

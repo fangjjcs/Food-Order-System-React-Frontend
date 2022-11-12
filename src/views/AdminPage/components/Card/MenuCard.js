@@ -1,5 +1,5 @@
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Button} from '@mui/material';
 import { useCallback, useState } from 'react';
 
@@ -10,42 +10,22 @@ import EditDialog from '../Dialog/EditDialog';
 
 const MenuCard = ({item, icon}) => {
 
-    const dispatch = useDispatch();
     const history = useHistory();
 	const { isLoading, error, sendRequest } = useHttpClient();
-    const isLogin = useSelector((state) => state.ui.isLogin);
 
     const token = useSelector((state) => state.ui.token);
-    const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
-
 
     const header = new Headers()
 	header.append("Content-Type", "application/json")
 	header.append("Authorization", "Bearer " + token)
 
-    const onClickCardHandler = (isTodayMenu) => {
-        if(!isLogin) {
-            history.replace("/login");
-        }
-        setIsDialogOpen(true);
-    }
-
-    const onCloseDialog = () => {
-        setIsDialogOpen(false);
-    }
-
     const editMenuHandler = (item) => {
         setIsEditDialogOpen(true);
-        setIsDialogOpen(false);
     }
 
     const onEditDialogClose = () => {
         setIsEditDialogOpen(false);
-    }
-
-    const round = (rating) => {
-        return Math.round(rating*10) / 10;
     }
 
     const checkTodayMenu = useCallback((opened, updatedAt) => {
@@ -79,7 +59,6 @@ const MenuCard = ({item, icon}) => {
 			if (responseData.status === 403) {
 			    history.replace("/login");
 			} else if (responseData.status === 200) {
-                setIsDialogOpen(false);
                 window.location.reload();
 			}
 		} catch (err) {
