@@ -47,7 +47,6 @@ const AgTable = ({resultData}) => {
 	header.append("Authorization", "Bearer " + token)
 
 	useEffect(()=>{
-		console.log(resultData)
 		setData(resultData)
 	},[resultData])
 

@@ -5,7 +5,6 @@ import "./AdminPage.css";
 import MainContent from './components/MainContent';
 import { useHistory } from "react-router-dom";
 import { getAllMenu } from "../../store/menu-actions";
-import DeliverSvg from '../../shared/style/image/deliver.png';
 
 const AdminPage = () => {
 

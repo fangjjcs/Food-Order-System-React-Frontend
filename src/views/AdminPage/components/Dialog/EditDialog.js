@@ -1,9 +1,8 @@
-import React, {  useEffect, useState } from "react";
+import React, { useState } from "react";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import { Box, FormControl, InputLabel, Input, InputAdornment, FormHelperText, MenuItem, Select, Button } from "@material-ui/core";
+import { FormControl, InputLabel, Input, InputAdornment, FormHelperText, MenuItem, Select, Button } from "@material-ui/core";
 import { Restaurant, Fastfood, Info } from "@material-ui/icons";
 
 import "./EditDialog.css";
@@ -15,7 +14,7 @@ const EditDialog = ({isOpen, onEditDialogClose, item}) => {
 	const [isError, setIsError] = useState(false);
 
 	const id = item.id;
-	const [menuName, setMenuName] = useState(item.name);
+	const [storeName, setStoreName] = useState(item.name);
 	const [type, setType] = useState(item.type);
 	const [fileString, setFileString] = useState(item.fileString);
 	const [memo, setMemo] = useState(item.memo);
@@ -29,7 +28,7 @@ const EditDialog = ({isOpen, onEditDialogClose, item}) => {
 	header.append("Authorization", "Bearer " + token);
 
 	const handleNameChange = (event) => {
-		setMenuName(event.target.value);
+		setStoreName(event.target.value);
 	};
 
 	const handleMemoChange = (event) => {
@@ -41,7 +40,7 @@ const EditDialog = ({isOpen, onEditDialogClose, item}) => {
 	};
 
 	const checkEmpty = () => {
-		if (menuName === "" || type === "") {
+		if (storeName === "" || type === "") {
 		setIsError(true);
 		return false;
 		}
@@ -52,7 +51,7 @@ const EditDialog = ({isOpen, onEditDialogClose, item}) => {
 		const checkPass = checkEmpty();
 		const request = {
 		id: id,
-		name: menuName,
+		name: storeName,
 		type: type,
 		memo: memo,
 		fileString: fileString,
@@ -137,10 +136,10 @@ const EditDialog = ({isOpen, onEditDialogClose, item}) => {
 					<Restaurant style={{ color: "#005566" }} />
 					</InputAdornment>
 				}
-				value={menuName}
+				value={storeName}
 				onChange={handleNameChange}
 				/>
-				{isError && menuName === "" && (
+				{isError && storeName === "" && (
 				<FormHelperText error>Can not be empty</FormHelperText>
 				)}
 			</FormControl>

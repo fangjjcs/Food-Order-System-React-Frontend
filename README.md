@@ -4,9 +4,13 @@
 
 <br>
 
+## Architecture
+
 ![architecture](./architecture.svg)
 
 <br>
+
+## Screenshots
 
 Home Page Shows All Menu List
 <img width="1259" alt="截圖 2022-10-30 下午11 26 44" src="https://user-images.githubusercontent.com/33279791/198886977-39697f56-b375-4982-8a5b-0a498f94366a.png">
@@ -66,5 +70,21 @@ Manage / Edit Menu At Admin Page
 - "react-scripts": "5.0.0",
 - "react-transition-group": "^4.2.2",
 
-### Illustration
-From [Whoosh!](https://www.ls.graphics/illustrations/whoosh)
+<br>
+
+## Illustration
+
+From [Whoosh!](https://www.ls.graphics/illustrations/whoosh), thanks a lot!
+
+<br>
+
+## How to use this repo
+
+1. download and run `npm install`, then\
+`npm start` runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+2. build backend system, 
+or you can reference my [backend repository (Golang)](https://github.com/fangjjcs/Food-Order-System-GO-Backend) for this project.
+
+3. build db connection, or you can reference my Postgres [DDL](./psql.txt)
